@@ -1,14 +1,18 @@
 # Assignment Instructions
 
 ## General Idea
-The idea of this assignment is to create a front-end application that presents the user with a textbox where they can list comma-separated items they usually eat for lunch. Once that's entered, the user has to click the "Check If Too Much" button.
+The idea of this assignment is to create a "check off" shopping List application.
 
-If the number of items in the textbox is less than or equal to 3 (e.g., 1, 2, or 3), a message should show up under to the textbox saying "Enjoy!". If the number of items is greater than 3 (4, 5, and above), the message "Too much!" should show up under the textbox.
+Think of being in a store with a shopping list that allows you to "check off" the items you've already bought, except instead of checking them off, the bought item simply moves to the "Already Bought" list.
 
-If the textbox is empty and the user clicks the "Check If Too Much" button, the message "Please enter data first" should show up. 'Empty' here means either `""` (empty string) or a string with just spaces in it. (Hint: AngularJS `ng-model` already performs the trimming for you, so there shouldn't be anything you need to do.)
+Your HTML page should display 2 lists, one titled "To Buy" and the other "Already Bought".
 
-Only 1 message should be shown at any given time. In other words, if you have both messages "Enjoy!" and "Too much!" showing up at the same time, it's an error.
+The "To Buy" list should be pre-populated with a list of at least 5 items. (Hint: Use an array of object literals, where each item will be similar to { name: "cookies", quantity: 10 }) Each shopping list item is to have a name and quantity. It should be displayed to the user in the format of Buy item_quantity item_name. For example, shopping list item { name: "cookies", quantity: 10 } would be listed as Buy 10 cookies.
 
-You are not required to handle a case where there is no item between some commas. For example, you are free to consider this case `item 1, item2,,item3` or this case `item 1, item2, ,item3` as 4 items in the list. However, you can implement checking for an 'empty' item as a bonus feature (ungraded). Please make sure to put a comment somewhere next to the input textbox stating that you do NOT consider and empty item, i.e., `, ,` as an item towards to the count.
+Next to each item in the list should be a button with the label "Bought". When the user clicks on the "Bought" button, its associated item should be removed from the "To Buy" list and appear in the "Already Bought" list.
 
-[See my solution web page](https://igogra.github.io/Single-Page-Web-Applications-with-AngularJS/Module1/)
+The "Already Bought" list should initially be empty and display a message "Nothing bought yet". Make sure the message appears only when the list is empty. Once something is "bought" and appears on this list, the format of each item in the list should be Bought item_quantity item_name. For example, the bought item of 10 cookies mentioned before would appear in this list as Bought 10 cookies.
+
+Once the user "buys" every item on the "To Buy" list, i.e., clicks on the "Bought" button for every item in the "To Buy" list, instead of the empty "To Buy" list, display the message "Everything is bought!"
+
+[See my solution web page](https://igogra.github.io/Single-Page-Web-Applications-with-AngularJS/Module2/)
